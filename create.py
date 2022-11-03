@@ -16,13 +16,13 @@ import time
 
 
 FINE = 2
-TIME_OUT_MESSAGE = 3000
+TIME_OUT_MESSAGE = 5000
 
 class User_Active:
 
     def __init__(self, user_id):
         self.user_id = user_id
-        self.bonus = 25
+        self.bonus = 10
         self.time = time.time()
 
 
@@ -30,7 +30,7 @@ class User_Active:
 
         if (time.time() - self.time) * 1000 < TIME_OUT_MESSAGE:
             return False
-        self.bonus += 25
+        self.bonus += 10
         self.time = time.time()
         return True
 
